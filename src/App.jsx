@@ -18,9 +18,13 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import CreditCardInput from 'react-credit-card-input';
 import NumericFormat, { InputAttributes } from 'react-number-format';
-
-
-
+import background_image from './img/background_image.jpg'
+import header from "./img/header.svg"
+ import logo from "./img/logo.svg"
+ import mirsvg from './img/mir.svg'
+import mirpng from './img/mir.png'
+import exam from './img/exam.png'
+import icon from "./img/icon.png"
 function App() {
   const [name, setName] = useState("")
   const [surname, setSurname] = useState("")
@@ -47,16 +51,16 @@ function App() {
   return (
     <div className="w-full h-full ">
       <header className="w-full">
-        <img src="./img/header.svg" alt="" className="w-full objet-cover" />
+        <img src={header} alt="" className="w-full objet-cover" />
       </header>
       <ToastContainer position='top-center' />
       <div className='w-full h-full relative'>
-        <img src='./img/background_image.jpg' alt="" className='w-full h-full absolute z-[-2] object-cover ' />
+        <img src={background_image} alt="" className='w-full h-full absolute z-[-2] object-cover ' />
         <div className="w-full h-12 flex items-center justify-center  border-b absolute !z-[5]">
           <div className="w-[90%] sm:w-[77%] flex items-center justify-between">
-            <img src="./img/logo.svg" alt="" className="w-[103px] objet-cover block sm:hidden" />
+            <img src={logo} alt="" className="w-[103px] objet-cover block sm:hidden" />
             <div className="hidden sm:flex justify-between items-center gap-4">
-              <img src="./img/logo.svg" alt="" className="w-[103px] objet-cover" />
+              <img src={logo} alt="" className="w-[103px] objet-cover" />
               <div className="flex flex-col "><div className="text-xs ">Частным клиентам  </div>
                 <span className='border-b-2 border-black relative top-4'></span></div>
               <div className="text-xs">Самозанятым</div>
@@ -98,13 +102,13 @@ function App() {
             <div className='w-[400px] h-[250px] shadow-md px-10 py-5 rounded-md border bg-gray-100  flex flex-col items-center justify-between relative'>
               <div className="w-full flex items-center justify-end gap-3">
                 <SiVisa size={35} className={`${code !== null && code[0] === '4' ? 'text-blue-600 ' : 'text-gray-300'}`} />
-                <img src={`./img/mir.${code !== null && code[0] === '2' ? 'svg' : 'png'} `} className='w-9 h-9 ' alt="" />
+                <img src={code !== null && code[0] === '2' ? mirsvg : mirpng} className='w-9 h-9 ' alt="" />
                 <SiMastercard size={27} className={`${code !== null && code[0] === '5' ? 'text-orange-500 ' : 'text-gray-300'}`} />
               </div>
               <div onClick={() => setExam(!exam)} onMouseEnter={() => setExam(true)} onMouseLeave={() => setExam(false)}  className={' rounded-full hidden sm:block border border-gray px-2 absolute top-20 right-6 z-[100] cursor-pointer text-[13px]'}>?</div>
               <div className={` ${exam ? 'flex' : 'hidden'} flex-col border p-3 bg-white rounded-xl   absolute top-20 -right-[20rem] z-[102] cursor-pointer text-[14px]`}>
               <span>Код CVV/CVC указан на <br/> обратной стороне карты</span>
-              <img src="./img/exam.png" alt="" />
+              <img src={exam} alt="" />
               </div>
               <CreditCardInput
                 customTextLabels={{
@@ -194,7 +198,7 @@ function App() {
           </div>
           <div className="flex flex-col gap-8">
             <div className="">
-              <div className="text-[#08a652] flex gap-2"><img src="./icon.png" alt="" className='w-5 h-5' /> Звонок из приложения СберБанк Онлайн</div>
+              <div className="text-[#08a652] flex gap-2"><img src={icon} alt="" className='w-5 h-5' /> Звонок из приложения СберБанк Онлайн</div>
               <div className="text-white text-sm">через интернет, бесплатно по Wi-Fi</div>
             </div>
             <div className="">
