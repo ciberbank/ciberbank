@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/ciberbank/static/css/main.f675842f.css",
+    "main.js": "/ciberbank/static/js/main.9f1391e6.js",
+    "static/js/787.c57809bb.chunk.js": "/ciberbank/static/js/787.c57809bb.chunk.js",
+    "index.html": "/ciberbank/index.html",
+    "main.f675842f.css.map": "/ciberbank/static/css/main.f675842f.css.map",
+    "main.9f1391e6.js.map": "/ciberbank/static/js/main.9f1391e6.js.map",
+    "787.c57809bb.chunk.js.map": "/ciberbank/static/js/787.c57809bb.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f675842f.css",
+    "static/js/main.9f1391e6.js"
+  ]
+}
