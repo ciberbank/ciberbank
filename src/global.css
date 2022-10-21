@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap');
+
+html {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.background {
+    background-image: 'url(../img/background_image.jpg)';
+
+}
+
+.MuiInputBase-input {
+    padding-top: 10px !important;
+
+}
+
+.MuiInputBase-root {
+    background-color: none !important;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.MuiInputBase-input::placeholder {
+    font-size: 20px !important;
+}
+
+.credit-card-input {
+   background-color: rgb(243 244 246 / var(--tw-bg-opacity)) !important;
+   padding-bottom: 5px;
+   border-bottom: 1px solid black !important;;
+}
