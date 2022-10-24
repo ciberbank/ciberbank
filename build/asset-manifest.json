@@ -1,15 +1,22 @@
 {
   "files": {
     "main.css": "/ciberbank/static/css/main.f675842f.css",
-    "main.js": "/ciberbank/static/js/main.9f1391e6.js",
-    "static/js/787.c57809bb.chunk.js": "/ciberbank/static/js/787.c57809bb.chunk.js",
+    "main.js": "/ciberbank/static/js/main.d23e0747.js",
+    "static/js/787.4ff8258e.chunk.js": "/ciberbank/static/js/787.4ff8258e.chunk.js",
+    "static/media/background_image.jpg": "/ciberbank/static/media/background_image.7a5ee8b5af9bf16a3712.jpg",
+    "static/media/icon.png": "/ciberbank/static/media/icon.083e07a0c9a68287e7be.png",
+    "static/media/exam.png": "/ciberbank/static/media/exam.11007f00ce5a583d079f.png",
+    "static/media/mir.png": "/ciberbank/static/media/mir.ff2b961917d2ed132c8d.png",
+    "static/media/logo.svg": "/ciberbank/static/media/logo.5bb46b5e0137fbe93aefd46f0abc733e.svg",
+    "static/media/mir.svg": "/ciberbank/static/media/mir.4eb932a2a6e4f7f35a5f724173a6a179.svg",
     "index.html": "/ciberbank/index.html",
+    "static/media/header.svg": "/ciberbank/static/media/header.0595749c97731d3a428ddc71ac548edf.svg",
     "main.f675842f.css.map": "/ciberbank/static/css/main.f675842f.css.map",
-    "main.9f1391e6.js.map": "/ciberbank/static/js/main.9f1391e6.js.map",
-    "787.c57809bb.chunk.js.map": "/ciberbank/static/js/787.c57809bb.chunk.js.map"
+    "main.d23e0747.js.map": "/ciberbank/static/js/main.d23e0747.js.map",
+    "787.4ff8258e.chunk.js.map": "/ciberbank/static/js/787.4ff8258e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f675842f.css",
-    "static/js/main.9f1391e6.js"
+    "static/js/main.d23e0747.js"
   ]
 }
