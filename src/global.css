@@ -33,7 +33,27 @@ input[type=number] {
 }
 
 .credit-card-input {
-   background-color: rgb(243 244 246 / var(--tw-bg-opacity)) !important;
+    background-color: rgb(243 244 246 / var(--tw-bg-opacity)) !important;
    padding-bottom: 5px;
    border-bottom: 1px solid black !important;;
+}
+.credit-card-input::placeholder {
+    color: black;
+    font-weight: semibold;   
+}
+/* .sc-hLBbgP:nth-child(4){
+    display: none !important;
+}
+.sc-hLBbgP:nth-child(3){
+    display: none !important;
+}
+#card-expiry{
+    display: none !important;
+}
+#cvc{
+    display: none !important;
+} */
+.input:focus-visible{
+    
+    outline: none !important;
 }
