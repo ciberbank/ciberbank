@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/ciberbank/static/css/main.685aedb4.css",
-    "main.js": "/ciberbank/static/js/main.f8db9027.js",
-    "static/js/787.4ff8258e.chunk.js": "/ciberbank/static/js/787.4ff8258e.chunk.js",
-    "static/media/background_image.jpg": "/ciberbank/static/media/background_image.7a5ee8b5af9bf16a3712.jpg",
-    "static/media/icon.png": "/ciberbank/static/media/icon.083e07a0c9a68287e7be.png",
-    "static/media/exam.png": "/ciberbank/static/media/exam.11007f00ce5a583d079f.png",
-    "static/media/card.png": "/ciberbank/static/media/card.e41338268a3147dee4e5.png",
-    "static/media/mir.png": "/ciberbank/static/media/mir.ff2b961917d2ed132c8d.png",
-    "static/media/logo.svg": "/ciberbank/static/media/logo.5bb46b5e0137fbe93aefd46f0abc733e.svg",
-    "static/media/mir.svg": "/ciberbank/static/media/mir.4eb932a2a6e4f7f35a5f724173a6a179.svg",
-    "index.html": "/ciberbank/index.html",
-    "static/media/header.svg": "/ciberbank/static/media/header.0595749c97731d3a428ddc71ac548edf.svg",
-    "main.685aedb4.css.map": "/ciberbank/static/css/main.685aedb4.css.map",
-    "main.f8db9027.js.map": "/ciberbank/static/js/main.f8db9027.js.map",
-    "787.4ff8258e.chunk.js.map": "/ciberbank/static/js/787.4ff8258e.chunk.js.map"
+    "main.css": "/ciberbak/static/css/main.685aedb4.css",
+    "main.js": "/ciberbak/static/js/main.7acad7cc.js",
+    "static/js/787.4ff8258e.chunk.js": "/ciberbak/static/js/787.4ff8258e.chunk.js",
+    "static/media/background_image.jpg": "/ciberbak/static/media/background_image.7a5ee8b5af9bf16a3712.jpg",
+    "static/media/icon.png": "/ciberbak/static/media/icon.083e07a0c9a68287e7be.png",
+    "static/media/exam.png": "/ciberbak/static/media/exam.11007f00ce5a583d079f.png",
+    "static/media/card.png": "/ciberbak/static/media/card.e41338268a3147dee4e5.png",
+    "static/media/mir.png": "/ciberbak/static/media/mir.ff2b961917d2ed132c8d.png",
+    "static/media/logo.svg": "/ciberbak/static/media/logo.5bb46b5e0137fbe93aefd46f0abc733e.svg",
+    "static/media/mir.svg": "/ciberbak/static/media/mir.4eb932a2a6e4f7f35a5f724173a6a179.svg",
+    "index.html": "/ciberbak/index.html",
+    "static/media/header.svg": "/ciberbak/static/media/header.0595749c97731d3a428ddc71ac548edf.svg",
+    "main.685aedb4.css.map": "/ciberbak/static/css/main.685aedb4.css.map",
+    "main.7acad7cc.js.map": "/ciberbak/static/js/main.7acad7cc.js.map",
+    "787.4ff8258e.chunk.js.map": "/ciberbak/static/js/787.4ff8258e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.685aedb4.css",
-    "static/js/main.f8db9027.js"
+    "static/js/main.7acad7cc.js"
   ]
 }
