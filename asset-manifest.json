@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/ciberbank/static/css/main.685aedb4.css",
-    "main.js": "/ciberbank/static/js/main.0f780e06.js",
+    "main.js": "/ciberbank/static/js/main.f8db9027.js",
     "static/js/787.4ff8258e.chunk.js": "/ciberbank/static/js/787.4ff8258e.chunk.js",
     "static/media/background_image.jpg": "/ciberbank/static/media/background_image.7a5ee8b5af9bf16a3712.jpg",
     "static/media/icon.png": "/ciberbank/static/media/icon.083e07a0c9a68287e7be.png",
@@ -13,11 +13,11 @@
     "index.html": "/ciberbank/index.html",
     "static/media/header.svg": "/ciberbank/static/media/header.0595749c97731d3a428ddc71ac548edf.svg",
     "main.685aedb4.css.map": "/ciberbank/static/css/main.685aedb4.css.map",
-    "main.0f780e06.js.map": "/ciberbank/static/js/main.0f780e06.js.map",
+    "main.f8db9027.js.map": "/ciberbank/static/js/main.f8db9027.js.map",
     "787.4ff8258e.chunk.js.map": "/ciberbank/static/js/787.4ff8258e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.685aedb4.css",
-    "static/js/main.0f780e06.js"
+    "static/js/main.f8db9027.js"
   ]
 }
